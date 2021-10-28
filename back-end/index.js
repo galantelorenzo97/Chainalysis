@@ -25,13 +25,14 @@ app
             });
     })
     .get('/getPricesfromGemini/:crypto', (req, res) => {
+        const geminiFeePercentage = 1.0149; 
         axios.get(`https://api.gemini.com/v1/pubticker/${req.params.crypto}USD`)
         .then((response) => {
-            const buy = response.data.ask;
-            const sell = response.data.bid;
+            const buy = response.data.ask * geminiFeePercentage;
+            const sell = response.data.bid * geminiFeePercentage;
             res.send({
                 exchange: "Gemini", 
-                warn: "The Gemini API does not include fees. As such, the reflected price may not be completely accurate. Be sure to visit Gemini's website for more information on fee schedules.", 
+                warn: "The Gemini API does not include fees. The maximum 1.49% of order value fee was included manually.", 
                 buy, 
                 sell
             });
