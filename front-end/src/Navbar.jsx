@@ -1,8 +1,8 @@
 function Navbar() {
     return (
-        <nav class="navbar navbar-dark bg-dark">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="/#">BTC/ETH Chainalysis recommender</a>
+        <nav className="navbar navbar-dark bg-dark">
+            <div className="container-fluid">
+                <a className="navbar-brand" href="/#">BTC/ETH Chainalysis recommender</a>
             </div>
         </nav>
     );
