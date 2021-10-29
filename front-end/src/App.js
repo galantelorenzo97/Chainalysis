@@ -8,7 +8,7 @@ function App() {
   const [btc, setBtc] = React.useState(true);
   return (
     <div className="App">
-      <header className="py-3 mb-4 border-bottom">
+      <header className="py-3 mb-4">
         <h1 className="display-1 text-center">
           I am looking to&nbsp;
           <Pill
