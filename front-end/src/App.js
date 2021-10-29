@@ -1,38 +1,39 @@
 //import logo from './logo.svg';
 import './App.css';
 import React from 'react';
+import Pill from './Pill.jsx'
 
 function App() {
-  const[buy, setBuy] = React.useState(true);
-  // eslint-disable-next-line
-  const[btc, setBtc] = React.useState(true);
+  const [buy, setBuy] = React.useState(true);
+  const [btc, setBtc] = React.useState(true);
   return (
     <div className="App">
       <header className="py-3 mb-4 border-bottom">
         <h1 className="display-1 text-center">
           I am looking to&nbsp;
-          <div className="btn-group mh-100 mw-100" role="group" aria-label="Basic outlined example">
-            <button onClick={()=>setBuy(true)} type="button" className={`btn ${buy ? "btn-danger active" : "btn-outline-danger"}`}>
-              <h1 className="display-3">Buy</h1>
-            </button>
-            <button onClick={()=>setBuy(false)} type="button" className={`btn text-white ${!buy ? "btn-success active" : "btn-outline-success"}`}>
-              <h1 className="display-3 active">Sell</h1>
-            </button>
-          </div>
+          <Pill
+            controlFunction={setBuy}
+            leftPillActive={buy}
+            leftText="Buy"
+            rightText="Sell"
+            activeLeftStyle="btn-danger active"
+            inactiveLeftStyle="btn-outline-danger"
+            activeRightStyle="btn-success active"
+            inactiveRightStyle="btn-outline-success"
+          />
           &nbsp;
-          <div className="btn-group mh-100 mw-100" role="group" aria-label="Crypto-currency selector">
-            <button onClick={()=>setBtc(true)} type="button" className={`btn ${btc ? "btn-primary active" : "btn-outline-primary"}`}>
-              <h1 className="display-3">BTC</h1>
-            </button>
-            <button onClick={()=>setBtc(false)} type="button" className={`btn ${!btc ? "btn-secondary active" : "btn-outline-secondary"}`}>
-              <h1 className="display-3">ETH</h1>
-            </button>
-          </div>
+          <Pill
+            controlFunction={setBtc}
+            leftPillActive={btc}
+            leftText="BTC"
+            rightText="ETH"
+            activeLeftStyle="btn-primary active"
+            inactiveLeftStyle="btn-outline-primary"
+            activeRightStyle="btn-secondary active"
+            inactiveRightStyle="btn-outline-secondary"
+          />
         </h1>
       </header>
-      <div className="container-fluid">
-
-      </div>
     </div>
   );
 }
