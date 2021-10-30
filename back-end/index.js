@@ -24,6 +24,7 @@ app
                 const sell = Number(results[1].data.data.amount);
                 res.send({
                     exchange: "Coinbase", 
+                    logo: "https://i.pcmag.com/imagery/reviews/04iFWGKegnqNWjhP2aMGdCk-10.1569476618.fit_scale.size_760x427.jpg",
                     info: "The Coinbase API includes the standard Coinbase fee (1%)", 
                     buy, 
                     sell
@@ -38,6 +39,7 @@ app
             const sell = Number((response.data.bid * geminiFeePercentage).toFixed(2));
             res.send({
                 exchange: "Gemini", 
+                logo: "https://btc.ng/wp-content/uploads/2018/09/Gemini.png",
                 warn: "The Gemini API does not include fees. The maximum 1.49% of order value fee was included manually.", 
                 buy, 
                 sell
