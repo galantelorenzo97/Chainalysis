@@ -50,8 +50,8 @@ app
         const bitfinexFeePercentage = 1.002;
         axios.get(`https://api-pub.bitfinex.com/v2/ticker/t${req.params.crypto}USD`)
         .then((response) => {
-            const buy = (response.data[0] * bitfinexFeePercentage).toFixed(2);
-            const sell = (response.data[2] * bitfinexFeePercentage).toFixed(2);
+            const buy = (response.data[2] * bitfinexFeePercentage).toFixed(2);
+            const sell = (response.data[0] * bitfinexFeePercentage).toFixed(2);
             res.send({
                 exchange: "BitFinex", 
                 logo: "https://www.bitfinex.com/images/thumbnails/bitfinex-1.png",
