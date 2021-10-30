@@ -82,7 +82,7 @@ function App() {
           <div className="col-4">
             <ul className="list-group">
               {exchangeDataList.map((data, index) => (
-                <li onClick={() => { setCurrentlySelectedIndex(index); syncFunction();}} key={index} className={`list-group-item list-group-item-action ${index === 0 ? "list-group-item-success" : "list-group-item-dark"} ${index === currentlySelectedIndex ? "active" : ""}`}>{data.exchange}</li>
+                <li onClick={() => { setCurrentlySelectedIndex(index); syncFunction();}} key={index} className={`list-group-item list-group-item-action ${index === 0 ? "list-group-item-success" : "list-group-item-dark"} ${index === currentlySelectedIndex ? "active" : ""}`}>{data.exchange}{index === 0 ? " (Best Bet)" : ""}</li>
               ))}
             </ul>
           </div>
